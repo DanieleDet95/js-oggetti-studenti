@@ -4,11 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Document</title>
+
+  <style>
+    .red{
+      color: red;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Contenitore html -->
+  <div class="container">
+  </div>
+
+  <!-- Template struttura -->
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry">
+      <h3 class="{{classe}}">Studente {{indice}}</h3>
+      <div class="body">
+        <p>{{nome}}</p>
+        <p>{{cognome}}</p>
+        <p>{{eta}}</p>
+      </div>
+    </div>
+  </script>
+
+  <!-- Connessione js -->
   <script src="js/script.js"></script>
 </body>
 </html>

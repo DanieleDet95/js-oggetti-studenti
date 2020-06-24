@@ -33,6 +33,10 @@ $(document).ready(
       "eta": [24,24,21,etaInput]
     }
 
+    // Implementazione Handlebars
+    var source = document.getElementById("entry-template").innerHTML;
+    var template = Handlebars.compile(source);
+
     // Inserimento di numero studenti in una variabile
     var numeroStudenti = studenti.nome.length;
 
@@ -40,6 +44,18 @@ $(document).ready(
     for (var i = 0; i < numeroStudenti; i++) {
       // Stampa a schermo dei dati studente
       console.log('Nome:' + studenti.nome[i] + ' Cognome:' + studenti.cognome[i] + ' Eta:' + studenti.eta[i]);
+      // Inserimento valori nel template
+      var context = {
+        classe: 'red',
+        indice: i + 1,
+        nome: studenti.nome[i],
+        cognome: studenti.cognome[i],
+        eta: studenti.eta[i]
+      };
+      var html = template(context);
+
+      // Inserimento del template nell'html
+      $('.container').append(html);
     }
 
 });
